@@ -45,8 +45,8 @@ MarkerS = 6;
 Symbol = ['.'];
 
 LW = 1; % Defining line width
-color = ['k';'k'; 'k'; 'k'; 'k'; 'k'; 'k']; % ['g';'y'; 'r'; 'c'; 'm'; 'k'; 'y']; % Definerer farverækkefølgen i plots
-Symbols = ['^';'o'; 's'; 'x'; 'd'; 'v'; '*']; % Definerer farverækkefølgen i plots
+color = ['k';'k'; 'k'; 'k'; 'k'; 'k'; 'k']; % ['g';'y'; 'r'; 'c'; 'm'; 'k'; 'y']; % Definerer farverÃ¦kkefÃ¸lgen i plots
+Symbols = ['^';'o'; 's'; 'x'; 'd'; 'v'; '*']; % Definerer farverÃ¦kkefÃ¸lgen i plots
 %%
 FM = {'Bakken' 'Bazhenov'  'Monterey' 'Niobrara' 'North Sea' 'Japan' 'Lockatong' 'Woodford'};
 for i = 1:8
