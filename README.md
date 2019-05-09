@@ -4,3 +4,4 @@
 
 
 Test environment for rock physics :)
+Nice logo - it works... just dont accept this commit
