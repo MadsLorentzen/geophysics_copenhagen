@@ -675,7 +675,7 @@ def IF():
     Rho_w=1.0
 
 
-    Por= np.arange(0,.41,0.01)
+    Por= np.arange(0,1.01,0.01)
     Rho=Rho_ca*(1-Por)+Por*Rho_w
 
     #WT = input('wet or dry sample? 0-dry, 1-wet:\n')
@@ -686,18 +686,22 @@ def IF():
     ax2 = fig1.add_subplot(222)
 
     ax1.set_xlabel('Porosity')
-    ax1.set_ylabel('K [Gpa]')
+    ax1.set_ylabel('M [Gpa]')
 
     ax2.set_xlabel('Porosity')
     ax2.set_ylabel('G [Gpa]')
 
-
-    IF = np.arange(0,1.1,0.1)
+    ax1.set_xlim(0,0.45), ax2.set_xlim(0,0.45)
+ 
+    IF = np.arange(0,1.01,0.01)
 
     K_out = np.zeros([IF.size,Por.size])
     G_out = np.zeros([IF.size,Por.size])
+    M_out = np.zeros([IF.size,Por.size])
 
-    for i in range(IF.size):
+    
+    
+    for i in range(0,IF.size,10):
         #print(i)
         f1=IF[i]*(1-Por)
         f2=Por+(1-IF[i])*(1-Por)
@@ -705,7 +709,9 @@ def IF():
         if WT == 0:
             K_sus=K_a                                     ### for dry sample
         elif WT==1:
-            K_sus= ( (Por/K_w) + (((1-Por)+Por*(1-IF[i])) / K_ca) )**(-1)   ###  for wet sample
+            K_sus = (Por/K_w+(1-Por)*(1-IF)/K_ca)**(-1)  * (Por + (1-IF)*(1-Por)) # Kenb Version
+            
+        #K_sus= ( (Por/K_w) + (((1-Por)+Por*(1-IF[i])) / K_ca) )**(-1)   ###  for wet sample (MLO edited)
         #K_sus_start = ( (Por/K_w) + (((1-Por)*(1-IF[i])) / K_ca) )**(-1)   ###  for wet sample
     
     
@@ -723,9 +729,9 @@ def IF():
 
         K_out[i,:]=K 
         G_out[i,:]=G 
+        M_out[i,:]=M
 
-
-        ax1.plot(Por,K_out[i])
+        ax1.plot(Por,M_out[i])
         ax2.plot(Por,G_out[i])
 
     return
