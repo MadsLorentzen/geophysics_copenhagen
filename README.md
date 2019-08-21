@@ -5,3 +5,5 @@
 ### Slack channel: https://swung.slack.com/messages/CJ3H4QVTM
 
 Test environment for rock physics :)
+
+Nice logo - it works... just dont accept this commit
