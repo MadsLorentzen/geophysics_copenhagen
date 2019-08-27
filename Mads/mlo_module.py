@@ -79,7 +79,8 @@ def bulk_shear(vp, vs, rho):
     rho = rho / 1000.       #[g/cm^3]
     mu  = rho * vs**2.      #shear modulus [GPa]
     k_s = rho * vp**2. - (4./3.)*mu #bulk modulus [GPa]
-    return k_s, mu
+    M = k_s+4/3*mu
+    return k_s, mu, M
 
 # Voigt and Reuss bounds + Hill averaging
 def bounds_vrh(f,k,u):
@@ -731,9 +732,9 @@ def IF():
         G_out[i,:]=G 
         M_out[i,:]=M
 
-        ax1.plot(Por,M_out[i])
-        ax2.plot(Por,G_out[i])
-
+        ax1.plot(Por,M_out[i], label = 'IF'+str(i/100.))
+        ax2.plot(Por,G_out[i], label = 'IF'+str(i/100.))
+    fig1.legend()
     return
 
 
