@@ -4,9 +4,9 @@ Rock physics and AVO modeling notebooks developed during PhD studies at the Univ
 
 ## Contents
 
-- **AVO Modeling** — Amplitude vs Offset forward modeling and analysis (`AVO_modeling_&_analysis.ipynb`, `Mads/`)
-- **Inclusion Framework** — Rock physics modeling using inclusion-based effective medium theories (`IF model/`)
-- **MATLAB Scripts** — DEM, Reuss bound, and velocity calculations (`matlab_scripts/`)
+- **AVO Modeling** - Amplitude vs Offset forward modeling and analysis (`AVO_modeling_&_analysis.ipynb`, `Mads/`)
+- **Inclusion Framework** - Rock physics modeling using inclusion-based effective medium theories (`IF model/`)
+- **MATLAB Scripts** - DEM, Reuss bound, and velocity calculations (`matlab_scripts/`)
 
 ## Getting Started
 
@@ -17,4 +17,4 @@ jupyter notebook
 
 ## Note
 
-This repository is archival and no longer actively maintained. It reflects coursework and research from 2018–2020.
+This repository is archival and no longer actively maintained. It reflects coursework and research from 2018-2020.
